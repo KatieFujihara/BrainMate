@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Login from './components/Login'
-
+import SignUpForm from './components/SignUpForm'
+import { FirebaseContext } from './components/Firebase';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       
-        <Login />
+        <FirebaseContext.Consumer>
+          {firebase => <SignUpForm firebase={firebase} />}
+        </FirebaseContext.Consumer>
+  
       </div>
     );
   }
