@@ -22,12 +22,15 @@ class SignUpForm extends Component {
       };
 
     onSubmit = event => {
+        // TODO: Do we wnat to use the username for anything? We could find a way to store this to the database via firebase
         const { username, email, passwordOne } = this.state;
 
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
+                window.alert("Your account has successfully been created.")
+                // TODO: set up a re-route ex. this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
                 this.setState({ error });
