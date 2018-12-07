@@ -63,6 +63,7 @@ class SignUpForm extends Component {
                         onChange={this.onChange}
                         type="text"
                         placeholder="Full Name"
+                        className="user-input"
                     />
                     <input
                         name="email"

@@ -1,4 +1,70 @@
-body {
-    background-color: blue;
+.logo {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
 }
 
+.user-input {
+    border-radius: 5%;
+    width: 200px;
+    height: 30px;
+    display: block;
+    margin: 5px auto;
+    border:1px solid #cccccc;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.sign-in-button {
+    border-radius: 5%;
+    width: 200px;
+    height: 40px;
+    display: block;
+    margin: 5px auto;
+    border:1px solid;
+    background-color: #EEC8C7;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 2px;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.accent-bar {
+    width: 100%;
+    background-color: #9EC2C6;
+    padding: 50px 0 50px 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.title {
+    color: white;
+    text-align:center;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.sign-in {
+    text-align: center;
+    color: #9EC2C6;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.sign-in-sub {
+    text-align: center;
+    color: gray;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.column {
+    flex: 50%;
+}
+
+.row {
+    display: flex;
+}

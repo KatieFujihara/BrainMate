@@ -3,18 +3,9 @@ import 'firebase/auth';
 
 
   // TODO: environment variables not loading correctly
-  // const config = {
-  //   apiKey: process.env.REACT_APP_apikey,
-  //   authDomain: process.env.REACT_APP_authDomain,
-  //   databaseURL: process.env.REACT_APP_databaseURL,
-  //   projectId: process.env.REACT_APP_projectId,
-  //   storageBucket: process.env.REACT_APP_storageBucket,
-  //   messagingSenderId: process.env.REACT_APP_messagingSenderId
-  // };
-
   const config = {
 
-  }
+  };
 
   class Firebase {
       constructor(){
