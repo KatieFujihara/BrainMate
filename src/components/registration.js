@@ -4,7 +4,7 @@ import logo from '../images/logo.png'
 const Registration = () => {
     return (
     <div>
-        <img src={logo} alt='logo'/>
+        {/* <img src={logo} alt='logo'/> */}
     </div>
     )
 }
