@@ -2,10 +2,15 @@ import app from 'firebase/app'
 import 'firebase/auth';
 
 
-  // TODO: environment variables not loading correctly
-  // const config = {
+  const config = {
+    apiKey: "AIzaSyBVxDqSkYDsFv0pyk4kJ7YMIgeQYPuz82E",
+    authDomain: "brainmate-7a79b.firebaseapp.com",
+    databaseURL: "https://brainmate-7a79b.firebaseio.com",
+    projectId: "brainmate-7a79b",
+    storageBucket: "brainmate-7a79b.appspot.com",
+    messagingSenderId: "118920061242"
+  };
 
-  // };
 
   class Firebase {
       constructor(){

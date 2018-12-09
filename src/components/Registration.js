@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
+import { FirebaseContext } from '../components/Firebase';
+
+const RegistrationPage = () => (
+    <div>
+      <FirebaseContext.Consumer>
+        {firebase => <RegistrationForm firebase={firebase} />}
+      </FirebaseContext.Consumer>
+    </div>
+  );
 
 
 const INITIAL_STATE = {
@@ -11,7 +20,7 @@ const INITIAL_STATE = {
   };
 
 
-class Registration extends Component {
+class RegistrationForm extends Component {
     
     constructor(props){
         super(props);
@@ -57,6 +66,7 @@ class Registration extends Component {
           email === '' ||
           username === '';
           
+    
         return (
             <div className="Login">
                 <Navbar />
@@ -112,7 +122,8 @@ class Registration extends Component {
                 </form>
             </div>
         )
+            
     }
 }
 
-export default Registration;
+export default RegistrationPage;

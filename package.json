@@ -5,9 +5,15 @@
   "dependencies": {
     "@curi/react-dom": "^1.2.0",
     "@curi/router": "^1.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.9",
+    "@fortawesome/free-solid-svg-icons": "^5.6.0",
+    "@fortawesome/react-fontawesome": "^0.1.3",
     "@hickory/browser": "^1.0.2",
     "firebase": "^5.6.0",
+    "font-awesome": "^4.7.0",
+    "i": "^0.3.6",
     "node-sass": "^4.10.0",
+    "npm": "^6.4.1",
     "react": "^16.6.2",
     "react-dom": "^16.6.2",
     "react-scripts": "2.1.1"

@@ -18,19 +18,18 @@ import { curiProvider } from "@curi/react-dom";
     const Router = curiProvider(router);
     
     ReactDOM.render(
+      <FirebaseContext.Provider value={new Firebase()}>
         <Router>
         {({ response }) => {
           const { body: Body, params } = response;
           return (
             <div>
-              <FirebaseContext.Provider value={new Firebase()}>
               {Body ? <Body params={params} /> : null}
-              <App />
-              </FirebaseContext.Provider>, 
             </div>
           );
         }}
-      </Router>,
+      </Router>
+      </FirebaseContext.Provider>,
       document.getElementById("root")
     );
 

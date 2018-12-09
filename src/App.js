@@ -14,9 +14,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FirebaseContext.Consumer>
+        {/* <FirebaseContext.Consumer>
           {firebase => <Registration firebase={firebase} />}
-        </FirebaseContext.Consumer>
+        </FirebaseContext.Consumer> */}
       </div>
     );
   }
