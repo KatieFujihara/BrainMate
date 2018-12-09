@@ -1,7 +1,23 @@
 import React from 'react'
 import logo from '../images/logo.png'
+import { Active, Link } from "@curi/react-dom";
 
-const Registration = () => {
+const ActiveLink = ({ to, params, partial, ...rest }) => (
+    <Active name={to} params={params} partial={partial}>
+      {active => (
+        <Link
+          to={to}
+          params={params}
+          {...rest}
+          className={active ? "active" : ""}
+        />
+      )}
+    </Active>
+  );
+  
+
+
+const SignIn = () => {
     return (
     <div>
         <img src={logo} alt='logo' className = "logo"/>
@@ -12,7 +28,7 @@ const Registration = () => {
         <div>
             <div className="row">
                 <div className="column">
-                    <h1 className="sign-in">Sign In</h1>
+                    <h1 className="header">Sign In</h1>
                     <p className="sign-in-sub">Welcome back!</p>
                     <input 
                       name="email"
@@ -31,10 +47,10 @@ const Registration = () => {
                     </button>
                 </div>
                 <div className="column">
-                    <h1 className="sign-in">Register</h1>
+                    <h1 className="header">Register</h1>
                     <p className="sign-in-sub">Create your free account today!</p>
                     <button className="sign-in-button">
-                        Register
+                        <ActiveLink to="Welcome" >Register</ActiveLink>
                     </button>
                 </div>
             </div>
@@ -43,4 +59,4 @@ const Registration = () => {
     )
 }
 
-export default Registration
+export default SignIn

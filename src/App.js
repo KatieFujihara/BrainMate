@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Registration from './components/registration'
 import './App.css';
 import './Styles.scss';
-import SignUpForm from './components/SignUpForm'
-import { FirebaseContext } from './components/Firebase';
+import Welcome from './components/Welcome'
+import SignIn from './components/SignIn'
+
+// import SignUpForm from './components/SignUpForm'
+// import { FirebaseContext } from './components/Firebase';
 
 class App extends Component {
   render() {
@@ -12,7 +14,8 @@ class App extends Component {
         {/* <FirebaseContext.Consumer>
           {firebase => <SignUpForm firebase={firebase} />}
         </FirebaseContext.Consumer> */}
-  
+        <SignIn />
+        <Welcome />
       </div>
     );
   }
