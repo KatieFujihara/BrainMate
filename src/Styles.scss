@@ -142,8 +142,19 @@ ul {
     } 
 }
 
-//
+// Email Input 
+.username-header {
+    text-align: center;
+    color: #9EC2C6;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
 
+.username-desc {
+    color: gray;
+    text-align: center;
+}
+
+//
 .column {
     flex: 50%;
 }
