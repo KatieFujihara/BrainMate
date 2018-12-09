@@ -23,9 +23,10 @@ import { curiProvider } from "@curi/react-dom";
           const { body: Body, params } = response;
           return (
             <div>
-              {Body ? <Body params={params} /> : null}
-              {/* <FirebaseContext.Provider value={new Firebase()}>
-              </FirebaseContext.Provider>,  */}
+            {Body ? <Body params={params} /> : null}
+              <FirebaseContext.Provider value={new Firebase()}>
+                <App />
+              </FirebaseContext.Provider>, 
             </div>
           );
         }}

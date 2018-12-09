@@ -2,7 +2,7 @@ import { prepareRoutes } from "@curi/router";
 
 import Welcome from "./components/Welcome";
 import SignIn from "./components/SignIn";
-import EmailRegistration from "./components/EmailRegistration";
+import Registration from "./components/Registration";
 
 export default prepareRoutes([
   {
@@ -24,11 +24,11 @@ export default prepareRoutes([
     }
   },
   {
-    name: "EmailRegistration",
-    path: "email-registration",
+    name: "Registration",
+    path: "registration",
     response() {
       return {
-        body: EmailRegistration
+        body: Registration
       };
     }
   }

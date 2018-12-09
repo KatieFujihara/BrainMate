@@ -50,7 +50,7 @@ const SignIn = () => {
                     <h1 className="header">Register</h1>
                     <p className="sign-in-sub">Create your free account today!</p>
                     <button className="sign-in-button">
-                        <ActiveLink to="Welcome" >Register</ActiveLink>
+                        <ActiveLink to="Welcome">Register</ActiveLink>
                     </button>
                 </div>
             </div>

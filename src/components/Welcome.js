@@ -35,7 +35,7 @@ const Welcome = () => {
                     <p>Brain Mate Team</p>
                 </div>
                 <button className="welcome-button">
-                    <ActiveLink to="EmailRegistration">Agree</ActiveLink>
+                    <ActiveLink to="Registration">Agree</ActiveLink>
                 </button>
             </div>
         </div>
