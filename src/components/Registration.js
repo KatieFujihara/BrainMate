@@ -66,14 +66,14 @@ class Registration extends Component {
                 <p className="username-desc">This is the name  that will show up on your Profile and in the Community.</p>
                 <p className="username-desc">We discourage using real names and full names.</p>
                 <form onSubmit={this.onSubmit}>
-                    {/* <input
+                    <input
                         name="username"
                         value={username}
                         onChange={this.onChange}
                         type="text"
                         placeholder="Username"
                         className="user-input"
-                    /> */}
+                    />
                     <h1 className="username-header">
                     Please enter your email address.
                     </h1>
