@@ -1,10 +1,8 @@
 import { prepareRoutes } from "@curi/router";
-
 import Welcome from "./components/Welcome";
 import SignIn from "./components/SignIn";
 import Registration from "./components/Registration";
-import { FirebaseContext } from './components/Firebase';
-
+import Settings from "./components/Settings";
 
 export default prepareRoutes([
   {
@@ -33,5 +31,14 @@ export default prepareRoutes([
         body: Registration
       };
     }
-  }
+  },
+  {
+    name: "Settings",
+    path: "settings",
+    response() {
+      return {
+        body: Settings
+      };
+    }
+  } 
 ]);
