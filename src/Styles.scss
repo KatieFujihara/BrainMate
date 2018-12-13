@@ -152,7 +152,15 @@ ul {
     text-align: center;
 }
 
-//
+// Settings
+.dropdown {
+    display: block;
+    margin: 10px auto;
+    width: 25%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 30px;
+    font-size: 20px;
+}
 .column {
     flex: 50%;
 }
