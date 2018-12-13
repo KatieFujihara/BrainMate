@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import { FirebaseContext } from "../components/Firebase";
-import prepareRoutes from "../routes";
+import Browser from "@hickory/browser";
+import { curi } from "@curi/router";
+import prepareRoutes from "../routes"
+
+const history = Browser();
+const routes = prepareRoutes;
+const router = curi(history, routes);
 
 
 const RegistrationPage = () => (
@@ -26,6 +32,13 @@ class RegistrationForm extends Component {
     super(props);
     this.state = { ...INITIAL_STATE };
   }
+  handleClick = () => {
+    this.props.firebase
+    .getUserData() 
+    .then(response => {
+    response.forEach(doc => console.log(doc.data()))
+    })
+  }
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -39,8 +52,8 @@ class RegistrationForm extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        window.alert("User has been created");
-        // this.props.history.push(prepareRoutes.Settings);
+        router.history.navigate({ pathname: "/settings", method: "REPLACE"});
+        window.location.reload();
       })
       .catch(error => {
         this.setState({ error });
@@ -51,7 +64,7 @@ class RegistrationForm extends Component {
 
   render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;
-
+    console.log('in registration render')
     const isInvalid =
       passwordOne !== passwordTwo ||
       passwordOne === "" ||
@@ -113,7 +126,7 @@ class RegistrationForm extends Component {
             <button type="submit" className="welcome-button">
                 Sign Up
             </button>
-
+            <button onClick={this.handleClick} >hello noob</button>
           {error && <p>{error.message}</p>}
         </form>
       </div>

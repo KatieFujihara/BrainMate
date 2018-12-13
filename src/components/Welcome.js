@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../images/logo.png'
 import Navbar from './Navbar'
 import { Active, Link } from "@curi/react-dom";
+import Settings from './Settings'
 
 const ActiveLink = ({ to, params, partial, ...rest }) => (
     <Active name={to} params={params} partial={partial}>
@@ -37,6 +38,7 @@ const Welcome = () => {
                 <button className="welcome-button">
                     <ActiveLink to="Registration">Agree</ActiveLink>
                 </button>
+                {/* <Settings/> */}
             </div>
         </div>
     </div>

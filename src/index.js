@@ -11,7 +11,6 @@ import active from "@curi/route-active";
 import { curiProvider } from "@curi/react-dom";
 
 const history = Browser();
-
 const router = curi(history, routes, {
   route: [active()]
 });
