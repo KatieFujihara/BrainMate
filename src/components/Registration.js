@@ -4,6 +4,8 @@ import { FirebaseContext } from "../components/Firebase";
 import Browser from "@hickory/browser";
 import { curi } from "@curi/router";
 import prepareRoutes from "../routes"
+import {loginUser} from "./actions/user_actions"
+import {connect} from "react-redux"
 
 const history = Browser();
 const routes = prepareRoutes;
@@ -47,10 +49,11 @@ class RegistrationForm extends Component {
   onSubmit = event => {
     // TODO: Do we wnat to use the username for anything? We could find a way to store this to the database via firebase
     const { username, email, passwordOne } = this.state;
-
+    debugger
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
+        this.props.loginUser(authUser.user.uid)
         this.setState({ ...INITIAL_STATE });
         router.history.navigate({ pathname: "/settings", method: "REPLACE"});
         window.location.reload();
@@ -134,4 +137,10 @@ class RegistrationForm extends Component {
   }
 }
 
-export default RegistrationPage;
+const mapDispatchToProps = dispatch => {
+  return {
+    loginUser: (userInfo)=>loginUser(userInfo)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(RegistrationPage);

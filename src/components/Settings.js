@@ -90,6 +90,7 @@ class SettingsPage extends Component {
         );
       }
     }
+    
 
 const mapStateToProps = state => {
   return {
