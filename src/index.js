@@ -10,11 +10,11 @@ import Browser from "@hickory/browser";
 import active from "@curi/route-active";
 import { curiProvider } from "@curi/react-dom";
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import userReducer from './components/reducers/users_reducer.js'
+import thunk from 'redux-thunk';
 
-
-const store = createStore(userReducer)
+const store = createStore(userReducer, applyMiddleware(thunk))
 const history = Browser();
 const router = curi(history, routes, {
   route: [active()]
