@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import { FirebaseContext } from "../components/Firebase";
 import Select from "react-select";
+import { connect } from "react-redux";
 
 const selectYesOrNo = [
     { value: undefined, label: "Select" },
@@ -89,4 +90,12 @@ class SettingsPage extends Component {
         );
       }
     }
-export default SettingsPage;
+
+const mapStateToProps = state => {
+  return {
+    currentUserId: state.currentUserId
+  }
+}
+
+
+export default connect(mapStateToProps)(SettingsPage);

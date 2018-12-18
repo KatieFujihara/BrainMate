@@ -1,6 +1,6 @@
 export default function userReducer(
     state = {
-        currentUser: null,
+        currentUserId: null,
         loggedIn: false, 
     },
     action
@@ -9,7 +9,7 @@ export default function userReducer(
         case 'BEGIN_USER_REQUEST':
             return state; 
         case 'LOGIN':
-            return { loggedIn: true, currentUser: action.payload.user }
+            return { loggedIn: true, currentUserId: action.payload.userId }
         case 'LOGOUT':
             console.log("in LOGOUT returning", { ...state, loggedIn: true });
             return { ...state, loggedIn: true }
