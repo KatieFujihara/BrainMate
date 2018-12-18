@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import { FirebaseContext } from "../components/Firebase";
 import Select from "react-select";
+// import TimeSelect from "react-time-select"
 
 const selectYesOrNo = [
     { value: undefined, label: "Select" },
@@ -14,7 +15,7 @@ class SettingsPage extends Component {
         selectedOption1: null,
         selectedOption2: null,
         selectedOption3: null,
-
+        time: ''
       }
       handleChange1 = (selectedOption1) => {
         this.setState({ selectedOption1});
@@ -28,8 +29,14 @@ class SettingsPage extends Component {
         this.setState({ selectedOption3});
         console.log(`Option selected:`, selectedOption3);
       }
+      handleChange4 = (event, time) => {
+        this.setState({ time });
+        console.log(time);
+        event.persist();
+
+      }
         render() {
-    const { selectedOption1, selectedOption2, selectedOption3 } = this.state;
+    const { selectedOption1, selectedOption2, selectedOption3, time } = this.state;
 
     return (
       <div>
@@ -72,7 +79,9 @@ class SettingsPage extends Component {
           <p className="username-desc">
             Remind me at: (ex: 8:00AM)         
           </p>
-          <input className="dropdown" type="time" id="time" />
+          <input className="dropdown" type="time" id="time"
+            value={time}
+            onChange={this.handleChange4} />
           <button type="submit" className="welcome-button">
             Sign Up
           </button>

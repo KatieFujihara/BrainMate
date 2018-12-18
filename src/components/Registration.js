@@ -126,7 +126,7 @@ class RegistrationForm extends Component {
             <button type="submit" className="welcome-button">
                 Sign Up
             </button>
-            <button onClick={this.handleClick} >hello noob</button>
+            {/* <button onClick={this.handleClick} >hello noob</button> */}
           {error && <p>{error.message}</p>}
         </form>
       </div>
