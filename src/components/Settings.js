@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import { FirebaseContext } from "../components/Firebase";
 import Select from "react-select";
-// import TimeSelect from "react-time-select"
 
 const selectYesOrNo = [
     { value: undefined, label: "Select" },

@@ -9,7 +9,12 @@ import { curi } from "@curi/router";
 import Browser from "@hickory/browser";
 import active from "@curi/route-active";
 import { curiProvider } from "@curi/react-dom";
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import userReducer from './components/reducers/users_reducer.js'
 
+
+const store = createStore(userReducer)
 const history = Browser();
 const router = curi(history, routes, {
   route: [active()]
@@ -18,12 +23,14 @@ const Router = curiProvider(router);
 
 ReactDOM.render(
   <FirebaseContext.Provider value={new Firebase()}>
+  <Provider store={store}>
     <Router>
       {({ response }) => {
         const { body: Body, params } = response;
         return <div>{Body ? <Body params={params} /> : null}</div>;
       }}
     </Router>
+    </Provider>
   </FirebaseContext.Provider>,
   document.getElementById("root")
 );
