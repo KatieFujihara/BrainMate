@@ -83,7 +83,7 @@ class SettingsPage extends Component {
             value={time}
             onChange={this.handleChange4} />
           <button type="submit" className="welcome-button">
-            Sign Up
+            Save
           </button>
         </form>
       </div>
