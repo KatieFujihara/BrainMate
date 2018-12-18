@@ -29,11 +29,11 @@ class SettingsPage extends Component {
         this.setState({ selectedOption3});
         console.log(`Option selected:`, selectedOption3);
       }
-      handleChange4 = (event, time) => {
-        this.setState({ time });
-        console.log(time);
-        event.persist();
-
+      handleChange4 = (event) => {
+          const time = event.target.value
+          this.setState({ time });
+          console.log(time);
+          event.persist();
       }
         render() {
     const { selectedOption1, selectedOption2, selectedOption3, time } = this.state;
