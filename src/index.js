@@ -27,7 +27,7 @@ ReactDOM.render(
     <Router>
       {({ response }) => {
         const { body: Body, params } = response;
-        return <div>{Body ? <Body params={params} /> : null}</div>;
+        return <div>{Body ? <Body params={params} history={router.history}  /> : null}</div>;
       }}
     </Router>
     </Provider>
