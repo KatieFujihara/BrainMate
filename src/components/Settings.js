@@ -35,8 +35,14 @@ class SettingsPage extends Component {
           console.log(time);
           event.persist();
       }
-        render() {
-    const { selectedOption1, selectedOption2, selectedOption3, time } = this.state;
+
+      handleFormSubmit = () => {
+        event.preventDefault()
+        
+      }
+      
+      render() {
+        const { selectedOption1, selectedOption2, selectedOption3, time } = this.state;
 
     return (
       <div>
@@ -97,6 +103,8 @@ const mapStateToProps = state => {
     currentUserId: state.currentUserId
   }
 }
+
+
 
 
 export default connect(mapStateToProps)(SettingsPage);
