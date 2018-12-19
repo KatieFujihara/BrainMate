@@ -38,7 +38,8 @@ class SettingsPage extends Component {
 
       handleFormSubmit = () => {
         event.preventDefault()
-        
+        const {selectedOption1, selectedOption2, selectedOption3, time} = this.state
+        // TODO: send to new firebase method that will write this data to database 
       }
       
       render() {
