@@ -9,8 +9,7 @@ export default function userReducer(
         case 'BEGIN_USER_REQUEST':
             return state; 
         case 'LOGIN':
-            debugger
-            return { loggedIn: true, currentUserId: action.payload.userId }
+            return { loggedIn: true, currentUserId: action.userId }
         case 'LOGOUT':
             console.log("in LOGOUT returning", { ...state, loggedIn: true });
             return { ...state, loggedIn: true }
