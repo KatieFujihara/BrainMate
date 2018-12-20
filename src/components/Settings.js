@@ -10,7 +10,15 @@ const selectYesOrNo = [
     { value: "No", label: "No" } 
 ];
 
-class SettingsPage extends Component {
+const SettingsPage = ({ currentUserId}) => (
+  <div>
+    <FirebaseContext.Consumer>
+      {firebase => <SettingsForm  currentUserId={currentUserId} firebase={firebase} />}
+    </FirebaseContext.Consumer>
+</div>)
+
+
+class SettingsForm extends Component {
     state = {
         selectedOption1: null,
         selectedOption2: null,
@@ -36,10 +44,12 @@ class SettingsPage extends Component {
           event.persist();
       }
 
-      handleFormSubmit = () => {
+      handleFormSubmit = (event) => {
         event.preventDefault()
         const {selectedOption1, selectedOption2, selectedOption3, time} = this.state
-        // TODO: send to new firebase method that will write this data to database 
+        // TODO: send to new firebase method that will write this data to database
+        this.props.firebase 
+          .doAssignUserPreferencesWithUserId(this.props.currentUserId)
       }
       
       render() {
