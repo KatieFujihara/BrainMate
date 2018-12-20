@@ -34,8 +34,17 @@ import 'firebase/firestore'
     doPasswordUpdate = password =>
       this.auth.currentUser.updatePassword(password);
       
+      // *** User Data API *** 
+
     getUserData = () => this.firestore.collection('users').get()
-    }
+    
+
+    doAssignUserPreferencesWithUserId = (userId) => {
+      this.firestore.collection('users').doc(userId).set({
+        testinfo: "TEST"
+      })}
+  }
+
 
   export default Firebase;
 
